@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    /* overflow: hidden; */
+    font-family: "Red Hat Text", sans-serif;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+#layout {
+    background-color: hsl(20, 50%, 98%);
+    width: 90rem;
+    height: 85rem;
+    display: flex;
+}
+
+h1 {
+    color: hsl(14, 65%, 9%);
+    font-size: 40px;
+    font-weight: 700;
+    margin: 5rem 0 2rem 7rem;
+}
+
+.products {
+
+    margin-left: 7rem;
+    display: grid;
+    gap: 2rem 1.5rem;
+    grid-template-columns: repeat(3,15.75rem);
+    grid-template-areas: 
+    "Waffle Creme Macaron"
+    "Tiramisu Baklava Meringue"
+    "Cake Brownie Panna";
+}
+
+.product {
+    position: relative;
+}
+
+.product-img {
+    width: 15.75rem;
+    border-radius: 10px;
+}
+
+.category {
+    color: hsl(7, 20%, 60%);
+    font-size: 14px;
+    font-weight: 400;
+    margin: 2rem 0 .4rem 0;
+}
+
+.dessert {
+    color: hsl(14, 65%, 9%);
+    font-size: 16px;
+    font-weight: 650;
+    margin-bottom: .2rem;
+}
+
+.price {
+    color: hsl(14, 86%, 42%);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.product-button {
+    width: 10rem;
+    height: 2.7rem;
+    background-color: hsl(0, 0%, 100%);
+    display: flex;
+    align-items: center;
+    border: 1px solid hsl(12, 20%, 44%);
+    border-radius: 20px;
+    position: absolute;
+    top: 13.8rem;
+    left: 2.8rem;
+}
+
+.product-button:hover {
+    cursor: pointer;
+}
+
+.product-button img {
+    margin: 0 .5rem 0 1.5rem;
+}
+
+.add {
+    color:hsl(14, 65%, 9%);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.waffle {
+    grid-area: Waffle;
+}
+
+.creme {
+    grid-area: Creme;
+}
+
+.macaron {
+    grid-area: Macaron;
+}
+
+.tiramisu {
+    grid-area: Tiramisu;
+}
+
+.baklava {
+    grid-area: Baklava;
+}
+
+.meringue {
+    grid-area: Meringue;
+}
+
+.cake {
+    grid-area: Cake;
+}
+
+.brownie {
+    grid-area: Brownie;
+}
+
+.panna {
+    grid-area: Panna;
+}
+
+#cart {
+width: 24rem;
+height: 19.5rem;
+border-radius: 15px;
+background-color: hsl(0, 0%, 100%);
+display: flex;
+flex-direction: column;
+align-items: center;
+margin: 5rem 0 0 2rem;
+}
+
+h2 {
+    color:hsl(14, 86%, 42%);
+    font-size: 25px;
+    font-weight: 700;
+    align-self: flex-start;
+    margin: 2rem 0 2.5rem 2rem
+}
+
+#cart img { 
+    width: 8rem;
+    margin-bottom: 1rem;
+}
+
+#cart p {
+    color:hsl(7, 20%, 60%);
+    font-size: 14px;
+    font-weight: 700;
+}
