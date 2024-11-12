@@ -2,73 +2,79 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <title>Frontend Mentor | Product list with cart</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="index.js"></script>
 </head>
 <body>
 
-  Desserts
+<div id="layout">
+  <h1>Desserts</h1>
 
-  Waffle with Berries
-  Waffle
-  6.50
-  Add to Cart
+<section id="products">
+  <img src="./assets/images/image-waffle-desktop.jpg" alt="Waffle with berries">
+  <button><img src="./assets/images/icon-add-to-cart.svg" alt=""><p class="add">Add to Cart</p></button>
+  <div class="category">Waffle</div>
+  <h3 class="dessert">Waffle with Berries</h3>
+  <h4 class="price">6.50</h4>
 
-  Vanilla Bean Crème Brûlée
-  Crème Brûlée
-  7.00
-  Add to Cart
+  <img src="./assets/images/image-creme-brulee-desktop.jpg" alt="Vanilla Bean Crème Brûlée">
+  <button><img src="./assets/images/icon-add-to-cart.svg" alt=""><p class="add">Add to Cart</p></button>
+  <div class="category">Crème Brûlée</div>
+  <h3 class="dessert">Vanilla Bean Crème Brûlée</h3>
+  <h4 class="price">7.00</h4>
+  
+  <img src="./assets/images/image-macaron-desktop.jpg" alt="Macaron Mix of Five">
+  <button><img src="./assets/images/icon-add-to-cart.svg" alt=""><p class="add">Add to Cart</p></button>
+  <div class="category">Macaron</div>
+  <h3 class="dessert">Macaron Mix of Five</h3>
+  <h4 class="price">8.00</h4>
+  
+  <img src="./assets/images/image-tiramisu-desktop.jpg" alt="Classic Tiramisu">
+  <button ><img src="./assets/images/icon-add-to-cart.svg" alt=""><p class="add">Add to Cart</p></button>
+  <div class="category">Tiramisu</div>
+  <h3 class="dessert">Classic Tiramisu</h3>
+  <h4 class="price">5.50</h4>
+  
+  <img src="./assets/images/image-baklava-desktop.jpg" alt="Pistachio Baklava">
+  <button><img src="./assets/images/icon-add-to-cart.svg" alt=""><p class="add">Add to Cart</p></button>
+  <div class="category">Baklava</div>
+  <h3 class="dessert">Pistachio Baklava</h3>
+  <h4 class="price">4.00</h4>
+  
+  <img src="./assets/images/image-meringue-desktop.jpg" alt="Lemon Meringue Pie">
+  <button><img src="./assets/images/icon-add-to-cart.svg" alt=""><p class="add">Add to Cart</p></button>
+  <div class="category">Pie</div>
+  <h3 class="dessert">Lemon Meringue Pie</h3>
+  <h4 class="price">5.00</h4>
+  
+  <img src="./assets/images/image-cake-desktop.jpg" alt="Red Velvet Cake">
+  <button><img src="./assets/images/icon-add-to-cart.svg" alt=""><p class="add">Add to Cart</p></button>
+  <div class="category">Cake</div>
+  <h3 class="dessert">Red Velvet Cake</h3>
+  <h4 class="price">4.50</h4>
+  
+  <img src="./assets/images/image-brownie-desktop.jpg" alt="Salted Caramel Brownie">
+  <button><img src="./assets/images/icon-add-to-cart.svg" alt=""><p class="add">Add to Cart</p></button>
+  <div class="category">Brownie</div>
+  <h3 class="dessert">Salted Caramel Brownie</h3>
+  <h4 class="price">4.50</h4>
+  
+  <img src="./assets/images/image-panna-cotta-desktop.jpg" alt="Vanilla Panna Cotta">
+  <button><img src="./assets/images/icon-add-to-cart.svg" alt=""><p class="add">Add to Cart</p></button>
+  <div class="category">Panna Cotta</div>
+  <h3 class="dessert">Vanilla Panna Cotta</h3>
+  <h4 class="price">6.50</h4>
+  
+</section>
 
-  Macaron Mix of Five
-  Macaron
-  8.00
-  Add to Cart
+<section id="cart">
+  <h2>Your Cart (<!-- Quantity -->)</h2>
+  <img src="./assets/images/illustration-empty-cart.svg" alt="">
+  <p>Your added items will appear here</p>
+</section>
+</div>
 
-  Classic Tiramisu
-  Tiramisu
-  5.50
-  Add to Cart
-
-  Pistachio Baklava
-  Baklava
-  4.00
-  Add to Cart
-
-  Lemon Meringue Pie
-  Pie
-  5.00
-  Add to Cart
-
-  Red Velvet Cake
-  Cake
-  4.50
-  Add to Cart
-
-  Salted Caramel Brownie
-  Brownie
-  4.50
-  Add to Cart
-
-  Vanilla Panna Cotta
-  Panna Cotta
-  6.50
-  Add to Cart
-
-  Your Cart (<!-- Quantity -->)
-  Your added items will appear here
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
 </body>
 </html>
