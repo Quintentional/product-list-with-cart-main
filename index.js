@@ -17,11 +17,14 @@ let currentQuantity = 0;
 for(let i=0 ; i < addCart.length ; i++) {
     addCart[i].addEventListener("click", function() {
         this.style.display="none";
+// -----------------------------------Display Cart--------------------------------
+        emptyCart.style.display="none";
+        fullCart.style.display="flex";
     })
 }
 
 
-// -----------------------------------------Increment Quantity----------------------------------------------
+// -----------------------------------------Increment/Decrement Quantity----------------------------------------------
 
 // Select all the plus and minus buttons
 const plus = document.querySelectorAll('.increment-div');
@@ -62,10 +65,6 @@ minus.forEach((button) => {
   button.addEventListener('click', handleQuantityChange);
 });
 
-// -------------------------------------------------Decrement Quantity------------------------------------------------
-
-
-
 
 // ---------------------------------------------Display Overlay----------------------------------------------------
 
@@ -82,17 +81,79 @@ removeOverlay.addEventListener("click", function() {
     window.location.reload();
 })
 
-// -------------------------------------------------Display Cart--------------------------------------------------------------
-
-// for(i=0 ; i < plus.length ; i++) {
-//     plus[i].addEventListener("click", function() {
-//         emptyCart.style.display="none";
-//         fullCart.style.display="flex";
-//     })
-// }
 
 // --------------------------------------------------Remove Item from Cart------------------------------------------------------
-// cartItem.forEach(removeItem => {
-
+    removeItem.forEach((button) => {
+        button.addEventListener('click',(event) => {
+           const cartItem = event.target.closest('.confirmed-item');
+            cartItem.style.display="none";
     
-// };
+        })
+    })
+
+    // -------------------------------------------------Remove Cart if empty-----------------------------------------------------------------
+    // function areAllItemsHidden(cartItem) {
+   
+        
+    //       if (cartItem.display !== 'none') {
+    //         alert("false");
+    //       }
+        
+      
+    //     alert("true");
+    //   }
+
+// --------------------------------------------------------------Increment/Decrement Quantity in Cart------------------------------------
+
+// // Select all the plus and minus buttons on the product page
+// const plusButtons = document.querySelectorAll('.plus-btn');
+// const minusButtons = document.querySelectorAll('.minus-btn');
+
+// // Function to update the cart quantity based on the product ID
+// function updateCartQuantity(productId, newQuantity) {
+//   const cartItem = document.querySelector(`.cart-item[data-product-id="${productId}"]`);
+//   if (cartItem) {
+//     const cartQuantityElement = cartItem.querySelector('.cart-quantity');
+//     cartQuantityElement.textContent = newQuantity;
+//   }
+// }
+
+// // Function to handle the quantity change (both plus and minus)
+// function handleQuantityChange(event) {
+//   // Find the parent button container
+//   const buttonContainer = event.target.closest('.add-to-cart');
+  
+//   // Get the product ID from the data-product-id attribute
+//   const productId = buttonContainer.closest('.product').getAttribute('data-product-id');
+  
+//   // Find the quantity paragraph within the same button container
+//   const quantityElement = buttonContainer.querySelector('.quantity');
+  
+//   // Get the current quantity, convert to number
+//   let quantity = parseInt(quantityElement.textContent);
+  
+//   // Check if the clicked button was the plus or minus button
+//   if (event.target.classList.contains('plus-btn')) {
+//     quantity++; // Increase the quantity
+//   } else if (event.target.classList.contains('minus-btn')) {
+//     if (quantity > 0) {
+//       quantity--; // Decrease the quantity, but don't go below 0
+//     }
+//   }
+  
+//   // Update the product quantity on the page
+//   quantityElement.textContent = quantity;
+
+//   // Update the cart quantity for the same product
+//   updateCartQuantity(productId, quantity);
+// }
+
+// // Add event listeners to plus buttons
+// plusButtons.forEach((button) => {
+//   button.addEventListener('click', handleQuantityChange);
+// });
+
+// // Add event listeners to minus buttons
+// minusButtons.forEach((button) => {
+//   button.addEventListener('click', handleQuantityChange);
+// });
