@@ -15,12 +15,18 @@ for (let i = 0; i < addCart.length; i++) {
     this.style.display = "none";
 
     // Get the product ID
-    const productId = this.closest('.product').getAttribute('data-product-id');
+    const productId = this.closest('.layout-product').getAttribute('data-product-id');
 
     // Set the initial quantity to 1
-    const activeButton = this.closest('.product').querySelector('.active-button');
+    const activeButton = this.closest('.layout-product').querySelector('.active-button');
     const quantityElement = activeButton.querySelector('.quantity');
     quantityElement.textContent = "1";
+
+    // Add border around selected item
+    const layoutImage = this.closest('.layout-product').querySelector('.product-img');
+    layoutImage.style.borderStyle="solid";
+    layoutImage.style.borderSize="2px";
+    layoutImage.style.borderColor="red";
 
     // Display the active version of the button (with plus, minus, and quantity)
     activeButton.style.display = "flex";
@@ -98,6 +104,10 @@ removeItem.forEach((button) => {
       productButton.style.display = 'flex';
     }
 
+    // Remove border from product image
+    const layoutImage = productElement.closest('.layout-product').querySelector('.product-img');
+    layoutImage.style.border='none';
+
     // Hide the cart item
     cartItem.style.display = 'none';
 
@@ -138,13 +148,16 @@ function updateCartQuantity(productId, newQuantity) {
         cartItemCostElement.textContent = `${totalCost}`;
         overlayItemCostElement.textContent = `${totalCost}`;
 
-            // Show or hide the cart item based on the quantity
+            // Show or hide the cart item based on the quantity and remove border if "0"
+         const layoutProduct = document.querySelector(`.layout-product[data-product-id="${productId}"]`);
+         const productImage = layoutProduct.querySelector('.product-img');
     if (newQuantity > 0) {
       cartItem.style.display = 'flex';
       overlayItem.style.display = 'flex';
     } else {
       cartItem.style.display = 'none';
       overlayItem.style.display = 'none';
+      productImage.style.border = 'none';
     }
 
             // Recalculate and update the cart total

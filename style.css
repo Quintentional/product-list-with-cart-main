@@ -6,13 +6,13 @@
 
 body {
     width: 100%;
-    height: 100vh;
-    /* overflow: hidden; */
+    min-height: 100vh;
     background-color: hsl(14, 65%, 9%);
     font-family: "Red Hat Text", sans-serif;
     font-size: 16px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 #layout {
@@ -45,9 +45,14 @@ h1 {
     position: relative;
 }
 
-.product-img {
+
+.product-img-desktop {
     width: 15.75rem;
     border-radius: 10px;
+}
+
+.product-img-mobile {
+    display: none;
 }
 
 .category {
@@ -92,6 +97,12 @@ h1 {
     margin: 0 .5rem 0 1.5rem;
 }
 
+.add {
+    color:hsl(14, 65%, 9%);
+    font-size: 14px;
+    font-weight: 700;
+}
+
 .active-button {
     background-color: hsl(14, 86%, 42%);
     width: 10rem;
@@ -129,12 +140,6 @@ h1 {
 }
 .quantity {
     color: hsl(0, 0%, 100%);
-}
-
-.add {
-    color:hsl(14, 65%, 9%);
-    font-size: 14px;
-    font-weight: 700;
 }
 
 .waffle {
@@ -478,7 +483,7 @@ h2 {
 .confirmed-dessert {
     font-size: 14px;
     font-weight: 700;
-    margin-bottom: .7rem
+    margin-bottom: .7rem;
 }
 
 .confirmed-numbers {
@@ -508,4 +513,107 @@ h2 {
     color:hsl(14, 65%, 9%);
     font-size: 16px;
     font-weight: 700;
+}
+
+/* ---------------------------------------------------------------------------------Mobile------------------------------------------------------------------------- */
+
+@media(max-width: 375px) {
+
+    #layout {
+        width: 375px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow:visible;
+    }
+    
+    h1 {
+        margin: 1rem 0 2rem 2rem;
+    }
+    
+    .products {
+        margin-left: 2rem;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "Waffle" 
+        "Creme" 
+        "Macaron"
+        "Tiramisu" 
+        "Baklava" 
+        "Meringue"
+        "Cake"
+        "Brownie" 
+        "Panna";
+    }
+    
+    .product {
+        position: relative;
+    }
+    
+
+    .product-img-desktop {
+        display: none;
+    }
+
+    .product-img-mobile {
+        display: block;
+        width: 20rem;
+        border-radius: 7px;
+    }
+    
+    
+    .product-button {
+        top: 11.5rem;
+        left: 4.8rem;
+    }
+    
+    .active-button {
+        top: 11.5rem;
+        left: 4.8rem;
+    }
+    
+    /* --------------------------------------------Cart--------------------------------------------------- */
+    #cart {
+    width: 20rem;
+    min-height: auto;
+    align-self: center;
+    margin: 2.5rem 0 2rem 0;
+    }
+    
+    
+
+    .carbon-neutral {
+        width: 17rem;
+    }
+    
+    
+    .full-cart-button {
+        font-size: 15px;
+        width: 17rem;
+    }
+    
+    
+    /* ----------------------------------------Overlay------------------------------------------------- */
+    
+    #order-layout {
+        align-self: flex-end;
+    }
+    
+    #order-confirmed {
+        width: 360px;
+        border-radius: 20px;
+        overflow: hidden;
+    }
+    
+    #confirmed {
+        font-size: 40px;
+        line-height: 3rem;
+        margin-bottom: .5rem;
+    }
+    
+    
+    .new-order {
+        width: 20rem;
+    }
+
 }
